@@ -54,6 +54,4 @@ function App() {
         </div>
     );
 }
-A;
-TEST;
 export default App;
