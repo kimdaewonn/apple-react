@@ -52,8 +52,7 @@ function App() {
                 <p>2월 17일 발행</p>
             </div>
         </div>
-        dddd
     );
 }
-
+A;
 export default App;
