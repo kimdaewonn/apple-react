@@ -55,4 +55,5 @@ function App() {
     );
 }
 A;
+TEST;
 export default App;
