@@ -10,6 +10,7 @@ function App() {
     ]);
     let [따봉, 따봉변경] = useState([0, 0, 0]);
     let [modal, setModal] = useState(false);
+    let [입력값, 입력값변경] = useState("");
 
     return (
         <>
@@ -35,6 +36,15 @@ function App() {
                             </h4>
 
                             <p>2월 18일 발행</p>
+                            <button
+                                onClick={() => {
+                                    let copy = [...글제목];
+                                    copy.splice(i, 1);
+                                    글제목변경(copy);
+                                }}
+                            >
+                                글삭제
+                            </button>
                         </div>
                     );
                 })}
@@ -44,6 +54,20 @@ function App() {
                     <Modal 글제목={글제목} title={title} />
                 ) : null}
             </div>
+            <input
+                onChange={(e) => {
+                    입력값변경(e.target.value);
+                }}
+            />
+            <button
+                onClick={() => {
+                    let copy = [...글제목];
+                    copy.unshift(입력값);
+                    글제목변경(copy);
+                }}
+            >
+                글발행
+            </button>
         </>
     );
 }
@@ -54,7 +78,6 @@ function Modal(props) {
             <h4>{props.글제목[props.title]}</h4>
             <p>날짜</p>
             <p>상세내용</p>
-            <button>글수정</button>
         </div>
     );
 }
